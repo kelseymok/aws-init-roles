@@ -27,7 +27,9 @@ The purpose of this repository to be a project template for aws accounts that do
 |   +-- role-myteam-readonly/
 |   +-- users.tf
 |   +-- main.tf
-|   +-- iam-myteam-<some-role>.tf
+|   +-- iam-myteam-admin.tf
+|   +-- iam-myteam-developer.tf
+|   +-- iam-myteam-readonly.tf
 ```
 
 ## Define the Roles
@@ -411,7 +413,7 @@ Then the new permissions boundary must be attached to the new role (`cat-herder`
           	variable = "iam:PermissionsBoundary"
             	test = "StringEquals"
             	values = ["${aws_iam_policy.myteam-developer-create-cat-herder-role-boundary.arn}"]
-      	}
+          }
       }
 
 5. In `/iam-admin`, `terraform apply` after assuming the `myteam-admin` role
