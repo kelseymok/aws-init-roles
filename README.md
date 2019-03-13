@@ -6,7 +6,7 @@ The purpose of this repository to be a project template for aws accounts that do
 
 1. [Define the Roles](#define-the-roles)
 2. [Using AWS Roles](#using-aws-roles)
-3. [Permissions Boundaries: Limiting the Power of Roles](#permissions-Boundaries:-limiting-the-power-of-roles)
+3. [Permissions Boundaries: Limiting the Power of Roles](#permissions-boundaries-limiting-the-power-of-roles)
 
 ### File Structure
 
