@@ -50,6 +50,7 @@ Within `/iam-admin` there is a standard interface for the file structure which l
 |   +-- +-- variables.tf
 |   +-- users.tf
 |   +-- main.tf
+|   +-- outputs.tf
 |   +-- iam-myteam-<some-role>.tf
 
 ```
