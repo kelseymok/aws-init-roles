@@ -1,0 +1,10 @@
+defaultRegion = "eu-central-1"
+
+keyRotationIntervalMinutes = 10080
+
+[profiles]
+mainAccount = "myaccount"
+mainAccountMfaSession = "myaccount-mfa"
+
+[accounts]
+myaccount = "123456789012"
