@@ -38,7 +38,7 @@ Within `/iam-admin` there is a standard interface for the file structure which l
 
 ```
 +-- iam-admin
-|   +-- role-myteam-<some-role>
+|   +-- role-myteam-<some-role>/
 |   +-- +-- group.tf
 |   +-- +-- group-policies.tf
 |   +-- +-- role.tf
