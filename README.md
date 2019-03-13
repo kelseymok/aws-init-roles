@@ -11,7 +11,7 @@ The purpose of this repository to be a project template for aws accounts that do
 |   +-- bin/
 |   +-- README.md
 +-- docs
-|   +-- aws/
+|   +-- aws-roles/
 |   +-- +-- command-line-access.md
 |   +-- +-- console-access.md
 |   +-- +-- README.md
@@ -75,7 +75,7 @@ The reason behind his interface is:
 This project also offers an example of command line tools around changing roles. These [command line tools](./command-line-tools/README.md) are a bash wrapper around [sam701/awstools](github.com/sam701/awstools). 
 
 * [Learn how to set it up](./command-line-tools/README.md)
-* [Learn how to use it](docs/aws-roles/README.md)
+* [Learn how to use it](./docs/aws-roles/README.md)
 
 There are a few benefits by using `awstools` as a base. It was built by three developers who are still active: Alexei S. (former Scout24, now Proseiben), Moritz H. (TW), Serge G. (former TW, now Scout24). Additionally, this tool enforces important security measures including: 
 
