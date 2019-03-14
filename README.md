@@ -1,12 +1,23 @@
 # AWS Init Roles
 
-The purpose of this repository to be a project template for aws accounts that don't yet have a AWS role-strategy plan.
+Implementing a secure approach to AWS access can be tricky. How do you give access to IAM users while at the same time controlling for the blast radius should any one of those accounts become compromised? How do you draw power limits around your IAM users (and how is it organised)? 
 
-## Contents
+* Create IAM users with limited power (can change password, manage MFA)
+* Create IAM roles with varying permissions that IAM users can assume
+
+* Enforce MFA
+
+* Rotate Access Keys regularly
+
+  
+
+## Read This
 
 1. [Define the Roles](#define-the-roles)
 2. [Using AWS Roles](#using-aws-roles)
 3. [Permissions Boundaries: Limiting the Power of Roles](#permissions-boundaries-limiting-the-power-of-roles)
+
+
 
 ### File Structure
 
