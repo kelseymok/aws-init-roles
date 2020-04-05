@@ -41,7 +41,7 @@ The most relevent aspects of Permissions Boundaries for this module are:
 
 ```
 module "iam" {
-  source = "../iam"
+  source = "git::ssh://kelseymok@github.com/aws-init-roles.git"
 
   administrator-trusted-entities = [
     aws_iam_user.admin.arn
