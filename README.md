@@ -39,7 +39,7 @@ The most relevent aspects of Permissions Boundaries for this module are:
 
 ## Usage
 
-```
+```hcl-terraform
 module "iam" {
   source = "git::ssh://kelseymok@github.com/aws-init-roles.git"
 
@@ -115,6 +115,14 @@ There are two ways you can run the Docker Image:
 2. As a tool to assume a role and as a development environment (comes with Terraform and a few base libraries): `./go run` (and then `assume-role <Role Name>` once dropped into a bash session)
 
 Both methods update your Shared Credentials file (`~/.aws/credentials`) with a profile named `<Role Name>`. 
+
+If you use Terraform, make sure to add a profile to your provider configuration:
+```hcl-terraform
+provider "aws" {
+  region = "eu-central-1"
+  profile = "Your Role Name"
+}
+```
 
 #### Notes
 
