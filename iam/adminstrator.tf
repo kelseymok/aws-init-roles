@@ -19,7 +19,7 @@ resource "aws_iam_policy" "administrator" {
 resource "aws_iam_role" "administrator" {
   name = var.administrator-role-name
 
-  assume_role_policy = data.aws_iam_policy_document.administrator-assume-role-policy
+  assume_role_policy = data.aws_iam_policy_document.administrator-assume-role-policy.json
 }
 
 data "aws_iam_policy_document" "administrator-assume-role-policy" {
