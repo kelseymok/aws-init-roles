@@ -1,5 +1,5 @@
 resource "aws_iam_role" "developer" {
-  name                 = "developer"
+  name                 = var.developer-role-name
   path                 = "/${var.org}/"
   max_session_duration = local.max_session_duration
   description          = "Developer Role"
@@ -57,7 +57,7 @@ resource "aws_iam_role_policy_attachment" "iam" {
 }
 
 resource "aws_iam_policy" "iam" {
-  name   = "developer"
+  name   = var.developer-role-name
   path   = "/${var.org}/"
   policy = data.aws_iam_policy_document.developer-iam.json
 }

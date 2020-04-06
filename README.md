@@ -67,8 +67,10 @@ resource "aws_iam_user" "administrator" {
 
 | Field                              | Description                                                  | Type                   | Default         |
 | :--------------------------------- | ------------------------------------------------------------ | ---------------------- | --------------- |
-| **administrator-trusted-entities** | A list of AWS IAM user ARNs, representing those who are Administrators | required, list(string) | []              |
+| **developer-role-name**            | The role name of the developer                               | optional, string       | "developer"     |
 | **developer-trusted-entities**     | A list of AWS IAM user ARNs, representing those who are Developers | required, list(string) | []              |
+| **administrator-role-name**        | The role name of the administrator                           | optional, string       | "administrator" |
+| **administrator-trusted-entities** | A list of AWS IAM user ARNs, representing those who are Administrators | required, list(string) | []              |
 | **org**                            | The name of the group of managed users                       | optional, string       | "managed-users" |
 
 #### Outputs

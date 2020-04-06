@@ -9,7 +9,7 @@ resource "aws_iam_user" "admin" {
 }
 
 module "iam" {
-  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git?ref=v1.0.0"
+  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//iam?ref=v1.0.0"
 
   administrator-trusted-entities = [
     aws_iam_user.admin.arn

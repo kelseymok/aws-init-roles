@@ -11,13 +11,13 @@ data "aws_iam_policy_document" "administrator" {
 }
 
 resource "aws_iam_policy" "administrator" {
-  name   = "administrator"
+  name   = var.administrator-role-name
   path   = "/${var.org}/"
   policy = data.aws_iam_policy_document.administrator.json
 }
 
 resource "aws_iam_role" "administrator" {
-  name = "administrator"
+  name = var.administrator-role-name
 
   assume_role_policy = data.aws_iam_policy_document.administrator-assume-role-policy
 }
