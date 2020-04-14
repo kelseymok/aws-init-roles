@@ -43,11 +43,11 @@ module "iam" {
   source = "git::ssh://kelseymok@github.com/aws-init-roles.git"
 
   administrator-trusted-entities = [
-    aws_iam_user.admin.arn
+    aws_iam_user.admin-user.arn
   ]
   
   developer-trusted-entities = [
-    aws_iam_user.developer.arn
+    aws_iam_user.developer-user.arn
   ]
   
   org = "myOrg"
@@ -58,7 +58,7 @@ module "developer-user" {
   username = "number-zero-developer"
 }
 
-module "developer-admin" {
+module "admin-user" {
   source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//user?ref=v1.2.0"
   username = "the-enabler"
 }

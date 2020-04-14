@@ -3,7 +3,7 @@ module "developer-user" {
   username = "number-zero-developer"
 }
 
-module "developer-admin" {
+module "admin-user" {
   source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//user?ref=v1.2.0"
   username = "the-enabler"
 }
@@ -12,7 +12,7 @@ module "iam" {
   source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//iam?ref=v1.2.0"
 
   administrator-trusted-entities = [
-    module.developer-admin.arn
+    module.admin-user.arn
   ]
   developer-trusted-entities = [
     module.developer-user.arn
