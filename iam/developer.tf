@@ -1,9 +1,10 @@
 resource "aws_iam_role" "developer" {
-  name                 = var.developer-role-name
-  path                 = "/${var.org}/"
-  max_session_duration = local.max_session_duration
-  description          = "Developer Role"
-  assume_role_policy   = data.aws_iam_policy_document.developer-assume-role-policy.json
+  name                  = var.developer-role-name
+  path                  = "/${var.org}/"
+  max_session_duration  = local.max_session_duration
+  description           = "Developer Role"
+  assume_role_policy    = data.aws_iam_policy_document.developer-assume-role-policy.json
+  force_detach_policies = true
 }
 
 data "aws_iam_policy_document" "developer-assume-role-policy" {
