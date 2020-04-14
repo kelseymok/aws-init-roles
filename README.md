@@ -38,7 +38,6 @@ The most relevent aspects of Permissions Boundaries for this module are:
 <IMAGE: Effective boundaries>
 
 ## Usage
-
 ```hcl-terraform
 module "iam" {
   source = "git::ssh://kelseymok@github.com/aws-init-roles.git"
@@ -50,16 +49,18 @@ module "iam" {
   developer-trusted-entities = [
     aws_iam_user.developer.arn
   ]
+  
+  org = "myOrg"
 }
 
-resource "aws_iam_user" "developer" {
-  name = "number-zero-developer"
-  force_destroy = true
+module "developer-user" {
+  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//user?ref=v1.2.0"
+  username = "number-zero-developer"
 }
 
-resource "aws_iam_user" "administrator" {
-  name = "the-enabler"
-  force_destroy = true
+module "developer-admin" {
+  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//user?ref=v1.2.0"
+  username = "the-enabler"
 }
 ```
 

@@ -1,4 +1,4 @@
-FROM python:2-alpine
+FROM python:3-alpine
 WORKDIR /
 
 RUN apk add --no-cache \
@@ -13,7 +13,7 @@ RUN mkdir /root/.aws
 COPY assume-role.sh /usr/local/bin/assume-role
 
 ## Install Pip Packages
-RUN pip install --upgrade pip awscli
+RUN pip3 install --upgrade awscli
 
 ## Install Terraform
 ENV TERRAFORM_VERSION=0.12.24

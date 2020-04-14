@@ -1,20 +1,22 @@
-resource "aws_iam_user" "developer" {
-  name = "number-zero-developer"
-  force_destroy = true
+module "developer-user" {
+  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//user?ref=v1.2.0"
+  username = "number-zero-developer"
 }
 
-resource "aws_iam_user" "admin" {
-  name = "the-enabler"
-  force_destroy = true
+module "developer-admin" {
+  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//user?ref=v1.2.0"
+  username = "the-enabler"
 }
 
 module "iam" {
-  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//iam?ref=v1.0.0"
+  source = "git::ssh://git@github.com/kelseymok/aws-init-roles.git//iam?ref=v1.2.0"
 
   administrator-trusted-entities = [
-    aws_iam_user.admin.arn
+    module.developer-admin.arn
   ]
   developer-trusted-entities = [
-    aws_iam_user.developer.arn
+    module.developer-user.arn
   ]
+
+  org = "myorg"
 }
