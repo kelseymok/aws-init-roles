@@ -9,6 +9,12 @@ if [ -z $role ]; then
 fi
 
 mfa_serial=$(aws configure get mfa_serial --profile base)
+if [ -z "${mfa_serial}" ]; then
+  echo "mfa_serial for profile config does not exist. Did you set it?"
+  exit 1
+fi
+
+mfa_serial=$(aws configure get mfa_serial --profile base)
 read -p "Enter MFA (${mfa_serial}): " mfa_response
 if [ -z "${mfa_response}" ]; then
   echo "MFA not provided"
