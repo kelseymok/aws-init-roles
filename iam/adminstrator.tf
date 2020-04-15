@@ -16,6 +16,10 @@ resource "aws_iam_policy" "administrator" {
   policy = data.aws_iam_policy_document.administrator.json
 }
 
+resource "aws_iam_role_policy_attachment" "administrator" {
+  policy_arn = aws_iam_policy.administrator.arn
+  role = aws_iam_role.administrator.id
+}
 resource "aws_iam_role" "administrator" {
   name = var.administrator-role-name
   path                  = "/${var.org}/"
