@@ -255,6 +255,7 @@ data "aws_iam_policy_document" "boundary" {
       "iam:DeleteServiceLinkedRole",
       "iam:ListAttachedRolePolicies", // Required for EKS
       "iam:ListRoles",
+      "iam:PassRole", // Required for creating service-roles that assume instance roles
       "organizations:DescribeOrganization",
       "account:ListRegions",
     ]
