@@ -5,6 +5,7 @@ data "aws_iam_policy_document" "access-key-self-service" {
       "iam:DeleteAccessKey",
       "iam:ListAccessKeys",
       "iam:UpdateAccessKey",
+      "iam:GetAccessKeyLastUsed"
     ]
 
     effect = "Allow"
