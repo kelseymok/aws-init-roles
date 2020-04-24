@@ -35,7 +35,8 @@ The most relevent aspects of Permissions Boundaries for this module are:
 * An Administrator can allow a Developer to create IAM roles by requiring them to attach a Permissions Boundary to the IAM role, which limits the effective permissions of the IAM role
 * A Developer assigns identity-based policies to the IAM role. Only the permissions that are within the Permissions Boundary become effective (any identity-based policies defined outside of the Permissions Boundaries are ignored)
 
-<IMAGE: Effective boundaries>
+![effective-boundaries](https://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-scp-boundary-id.png)
+From: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html
 
 ## Usage
 ```hcl-terraform
