@@ -21,9 +21,19 @@ You, as an **Administrator**, want to manage IAM for your AWS Account. What's mo
 ### The Resulting Separation of Responsibilities
 
 * **Administrator:** Creates and manages IAM human users and sets the boundaries of what those users can do via permissions boundaries
-* **Developer:** Provisions Compute Machines on AWS and creates IAM roles within the permissions boundary set for them by the Administrator
+* **Developer:** Provisions Compute Machines on AWS and creates IAM roles within the [ermissions boundary](@permissions-boundaries) set for them by the Administrator.
 
-What makes this separation of responsibilities possible are [Permissions Boundaries](#permissions-boundaries).
+The resulting permissions are roughly:
+* Developer
+  * Power User Access
+  * Limited IAM permissions to create roles ONLY with a permissions boundary attached
+  * Cannot interact with AWS Organizations or Account
+  * Can interact with IAM entities NOT in the `org` path (e.g. to delete the roles that they've created)
+* Administrator
+  * Unlimited access to IAM, Organizations, Account
+  * Not able to manage Compute Machines
+  
+Please refer to `iam/administrator.tf` and `iam/developer.tf` for details.
 
 ### Permissions Boundaries
 
