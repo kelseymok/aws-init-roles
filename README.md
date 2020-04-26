@@ -28,7 +28,7 @@ The resulting permissions are roughly:
   * Power User Access
   * Limited IAM permissions to create roles ONLY with a permissions boundary attached
   * Cannot interact with AWS Organizations or Account
-  * Can interact with IAM entities NOT in the `org` path (e.g. to delete the roles that they've created)
+  * Can interact with IAM entities NOT in the `org` path (e.g. to delete the roles that they've created but not make changes to their own users/roles)
 * Administrator
   * Unlimited access to IAM, Organizations, Account
   * Not able to manage Compute Machines
